@@ -2,9 +2,11 @@
 
 Landing page for [`dns.ndo.dev`](https://dns.ndo.dev) - my private adblocking DNS over HTTPS (DoH) service.
 
-**This is for personal use only**   
+#### This is for personal use only
 
-curl maintains a good list of publicly available DNS-over-HTTPS servers (often run by big companies) here: [github.com/curl](https://github.com/curl/curl/wiki/DNS-over-HTTPS)
+> curl maintains a good list of publicly available DNS-over-HTTPS servers (often run by big companies) here: [github.com/curl](https://github.com/curl/curl/wiki/DNS-over-HTTPS)
+
+![Screenshot](screenshot.png)
 
 > More info about DNS over HTTPS in general - [wikipedia/dns-over-https](https://en.wikipedia.org/wiki/DNS_over_HTTPS)
 
