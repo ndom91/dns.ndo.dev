@@ -5,6 +5,7 @@ import faBatteryFull from '../../icons/bat-charge.svg';
 import faVolumeUp from '../../icons/volume-up.svg';
 import faWifi from '../../icons/wifi.svg';
 import faFeather from '../../icons/feather.svg';
+import dnsPlaceholder from '../../images/dns-placeholder.gif'
 
 //styles
 import * as S from './styles';
@@ -93,7 +94,7 @@ function Home({ isAnimationDone, night }) {
 
   const tweetProgress = () => {
     setText(
-      `I'm having too much fun with the day/night switch on twizzy.app 🤦️ ${toggleCount} times so far! 😂️`
+      `Instead of setting up my DNS over HTTPS client, I've toggled day/night 🤦️ ${toggleCount} times so far! 😂️`
     );
     setComposeOpen(true);
   };
@@ -147,34 +148,35 @@ function Home({ isAnimationDone, night }) {
 
         <S.Content ref={contentRef}>
           <S.WindowBox ref={messagesWindowRef} initialPose="hidden" pose={homePose} {...windowCenter}>
-            <S.Window night={night.value} hovering={isHoveringMessages.value}>
+            <img src={dnsPlaceholder} alt="Placeholder Gif" /> 
+            {/* <S.Window night={night.value} hovering={isHoveringMessages.value}>
               <Messages
                 messagesPose={messagesPose}
                 fabPose={fabPose}
                 night={night.value}
                 onToggleNight={onToggleNight}
               />
-            </S.Window>
+            </S.Window> */}
           </S.WindowBox>
 
           <A.Space huge />
 
           <S.TextContent isAnimationDone={isAnimationDone.value} pose={homePose}>
-            <S.Title> Twizzy </S.Title>
+            <S.Title> dns.ndo.dev </S.Title>
 
             <A.Space huge />
             <S.Subtitle>
               <span>
-                Focus on <A.Hover {...isHoveringMessages.bind}>messages</A.Hover> and{' '}
+                Focus on <A.Hover {...isHoveringMessages.bind}>privacy</A.Hover> and{' '}
                 <A.Hover
                   {...(canHover ? isHoveringCompose.bind : { onClick: () => setComposeOpen(true) })}
                   className="tweeting"
                 >
-                  tweeting
+                  performance
                 </A.Hover>
               </span>
               <br />
-              <span>The timeline can wait.</span>
+              {/* <span>The timeline can wait.</span> */}
             </S.Subtitle>
 
             <A.Space />
@@ -183,7 +185,7 @@ function Home({ isAnimationDone, night }) {
 
             <A.Space />
 
-            <S.Platforms>Supports macOS, Windows, and Linux</S.Platforms>
+            <S.Platforms>Supports android, macOS, Windows, and Linux</S.Platforms>
 
             <A.Space />
 
@@ -194,10 +196,9 @@ function Home({ isAnimationDone, night }) {
       </S.MainSection>
       <S.Footer initialPose="hidden" pose={composeIsOpen ? 'invisible' : menuBarPose}>
         <S.Links>
-          <S.Link href="mailto:contact@twizzy.app">Contact</S.Link>
+          <S.Link href="mailto:yo@ndo.dev">Contact</S.Link>
           <S.Link href="privacy.html">Privacy</S.Link>
-          <S.Link href="disclaimer.html">Disclaimer</S.Link>
-          <S.Link target="_blank" rel="noopener" href="https://github.com/kitze/twizzy-landing">
+          <S.Link target="_blank" rel="noopener" href="https://github.com/ndom91/dns.ndo.dev">
             View Source
           </S.Link>
           {/*<S.Link onClick={() => goTo(routes.license)}>Retrieve license</S.Link>*/}
