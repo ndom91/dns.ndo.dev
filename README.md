@@ -7,4 +7,4 @@ Landing page for [`dns.ndo.dev`](https://dns.ndo.dev) - my private ad-blocking D
 1. `npm install`
 2. `npm start`
 
-#### 🙋‍♂️ Forked from [@thekitze](https://twitter.com/thekitze/twizzy-landing)  
+#### 🙋‍♂️ Forked from [kitze/twizzy-landing](https://github.com/kitze/twizzy-landing)  
