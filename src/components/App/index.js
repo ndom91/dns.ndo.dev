@@ -12,11 +12,9 @@ import * as S from './styles';
 import * as A from '../../styles/shared-components';
 
 //components
-import Messages from '../Messages';
 import DayNightSwitch from '../DayNightSwitch';
 import MenuBar from '../MenuBar';
 import Compose from '../Compose';
-import ToggleCount from '../ToggleCount';
 import BuyButton from '../BuyButton';
 import Background from '../Background';
 
@@ -92,13 +90,6 @@ function Home({ isAnimationDone, night }) {
     setToggleCount(toggleCount + 1);
   };
 
-  const tweetProgress = () => {
-    setText(
-      `Instead of setting up my DNS over HTTPS client, I've toggled day/night 🤦️ ${toggleCount} times so far! 😂️`
-    );
-    setComposeOpen(true);
-  };
-
   const buy = async () => {
     if (isDev) {
       if (canBuyInDev === false) {
@@ -149,14 +140,6 @@ function Home({ isAnimationDone, night }) {
         <S.Content ref={contentRef}>
           <S.WindowBox ref={messagesWindowRef} initialPose="hidden" pose={homePose} {...windowCenter}>
             <img src={dnsPlaceholder} alt="Placeholder Gif" /> 
-            {/* <S.Window night={night.value} hovering={isHoveringMessages.value}>
-              <Messages
-                messagesPose={messagesPose}
-                fabPose={fabPose}
-                night={night.value}
-                onToggleNight={onToggleNight}
-              />
-            </S.Window> */}
           </S.WindowBox>
 
           <A.Space huge />
@@ -167,14 +150,7 @@ function Home({ isAnimationDone, night }) {
             <A.Space huge />
             <S.Subtitle>
               <span>
-                Focus on <A.Hover {...isHoveringMessages.bind}>privacy</A.Hover> and{' '}
-                <A.Hover
-                  {...(canHover ? isHoveringCompose.bind : { onClick: () => setComposeOpen(true) })}
-                  className="tweeting"
-                >
-                  performance
-                </A.Hover>
-              </span>
+                Focused on <A.Hover {...isHoveringMessages.bind}>privacy</A.Hover> and <A.Hover>performance</A.Hover> </span>
               <br />
               {/* <span>The timeline can wait.</span> */}
             </S.Subtitle>
@@ -190,13 +166,12 @@ function Home({ isAnimationDone, night }) {
             <A.Space />
 
             <DayNightSwitch value={night.value} onChange={onToggleNight} />
-            <ToggleCount onTweet={tweetProgress} count={toggleCount} />
           </S.TextContent>
         </S.Content>
       </S.MainSection>
       <S.Footer initialPose="hidden" pose={composeIsOpen ? 'invisible' : menuBarPose}>
         <S.Links>
-          <S.Link href="mailto:yo@ndo.dev">Contact</S.Link>
+          <S.Link href="mailto:dns@ndo.dev">Contact</S.Link>
           <S.Link href="privacy.html">Privacy</S.Link>
           <S.Link target="_blank" rel="noopener" href="https://github.com/ndom91/dns.ndo.dev">
             View Source

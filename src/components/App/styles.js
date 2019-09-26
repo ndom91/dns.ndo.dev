@@ -13,18 +13,19 @@ export const Text = styled.div(getThemeColor('text'));
 export const WindowBox = styled(
   pose.div({
     hidden: {
-      opacity: 0
-    },
-    hiddenCenter: {
       opacity: 0,
-      y: ({ y }) => y + 30,
-      x: ({ x }) => x
+      x: 200
     },
-    middle: {
-      opacity: 1,
-      y: ({ y }) => y,
-      x: ({ x }) => x
-    },
+    // hiddenCenter: {
+    //   opacity: 0,
+    //   y: ({ y }) => y + 30,
+    //   x: ({ x }) => x
+    // },
+    // middle: {
+    //   opacity: 1,
+    //   y: ({ y }) => y,
+    //   x: ({ x }) => x
+    // },
     normal: { opacity: 1, y: 0, x: -20 }
   })
 )({
