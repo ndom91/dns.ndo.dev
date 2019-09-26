@@ -25,7 +25,7 @@ export const WindowBox = styled(
       y: ({ y }) => y,
       x: ({ x }) => x
     },
-    normal: { opacity: 1, y: 0, x: 0 }
+    normal: { opacity: 1, y: 0, x: -20 }
   })
 )({
   maxWidth: 385,
