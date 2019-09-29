@@ -26,7 +26,7 @@ export const WindowBox = styled(
     //   y: ({ y }) => y,
     //   x: ({ x }) => x
     // },
-    normal: { opacity: 1, y: 0, x: -20 }
+    normal: { opacity: 1, y: 0, x: -70 }
   })
 )({
   maxWidth: 385,
@@ -182,7 +182,8 @@ export const TextContent = styled(
   pose.div({
     normal: { opacity: 1 },
     hidden: {
-      opacity: 0
+      opacity: 0,
+      x: 200
     }
   })
 )(
