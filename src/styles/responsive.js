@@ -1,7 +1,7 @@
 export const breakpoints = {
   large: 1030,
   medium: 850,
-  phone: 450
+  phone: 530
 };
 
 export const smaller = width => `@media screen and (max-width: ${width}px)`;

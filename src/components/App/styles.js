@@ -12,24 +12,36 @@ export const Text = styled.div(getThemeColor('text'));
 
 export const WindowBox = styled(
   pose.div({
-    hidden: {
-      opacity: 0,
-      x: 200
+    [widerThan(breakpoints.phone)]: {
+      hidden: {
+        opacity: 0,
+        x: 200
+      },
+      normal: { opacity: 1, y: 0, x: -70 },
     },
-    normal: { opacity: 1, y: 0, x: -70 }
+    [isHorizontal]: {
+      normal: { opacity: 1, y: 0, x: 0 }
+    }
   })
 )({
   maxWidth: 385,
   [isHorizontal]: {
     margin: 'auto',
-    width: '100%'
+    width: 'unset',
+    maxWidth: 'unset'
   }
 });
 
 export const HeroImg = styled.img({
+  [widerThan(breakpoints.large)]: {
+    width: '550px'
+  },
   [smaller(breakpoints.large)]: {
-    width: '500px',
-    marginLeft: '3rem'
+    width: '450px',
+  },
+  [smaller(breakpoints.phone)]: {
+    width: '450px',
+    margin: 'auto'
   },
   [isHorizontal]: {
     margin: 'auto',
@@ -100,7 +112,7 @@ export const Padding = styled.div({
     padding: '20px 40px'
   },
   [isHorizontal]: {
-    padding: '30px 15px'
+    padding: '0'
   }
 });
 
@@ -201,7 +213,7 @@ export const TextContent = styled(
       marginLeft: '200px'
     },
     [smaller(breakpoints.large)]: {
-      marginLeft: '100px'
+      marginLeft: '50px'
     },
     [isHorizontal]: {
       margin: 'auto'
