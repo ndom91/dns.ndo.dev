@@ -5,7 +5,7 @@ import pose from 'react-pose';
 import FontAwesomeIcon from '../../icons/Icon.js';
 
 import { applyTheme, getThemeColor, hover, when, whenNot } from '../../styles/mixins';
-import { breakpoints, isHorizontal, smaller, smallerHeight } from '../../styles/responsive';
+import { breakpoints, isHorizontal, smaller, widerThan, smallerHeight } from '../../styles/responsive';
 import { ELEMENTS, zIndexFor } from '../../styles/zindex';
 
 export const Text = styled.div(getThemeColor('text'));
@@ -16,16 +16,6 @@ export const WindowBox = styled(
       opacity: 0,
       x: 200
     },
-    // hiddenCenter: {
-    //   opacity: 0,
-    //   y: ({ y }) => y + 30,
-    //   x: ({ x }) => x
-    // },
-    // middle: {
-    //   opacity: 1,
-    //   y: ({ y }) => y,
-    //   x: ({ x }) => x
-    // },
     normal: { opacity: 1, y: 0, x: -70 }
   })
 )({
@@ -35,6 +25,16 @@ export const WindowBox = styled(
     width: '100%'
   }
 });
+
+export const HeroImg = styled.img({
+  [smaller(breakpoints.large)]: {
+    width: '500px',
+    marginLeft: '3rem'
+  },
+  [isHorizontal]: {
+    margin: 'auto',
+  }
+})
 
 export const Home = styled.div({
   ...flex.vertical,
@@ -179,14 +179,34 @@ export const Content = styled(Padding)({
 });
 
 export const TextContent = styled(
-  pose.div({
-    normal: { opacity: 1 },
-    hidden: {
-      opacity: 0,
-      x: 200
-    }
-  })
+    pose.div({
+      [widerThan(breakpoints.large)]: {
+        normal: { 
+          opacity: 1,
+          x: 100 
+      },
+        hidden: { opacity: 0 }
+      },
+      [smaller(breakpoints.medium)]: {
+        normal: { 
+          opacity: 1,
+          x: -200 
+        },
+        hidden: { opacity: 0 }
+      },
+    })
 )(
+  ({ theme }) => ({
+    [widerThan(breakpoints.large)]: {
+      marginLeft: '200px'
+    },
+    [smaller(breakpoints.large)]: {
+      marginLeft: '100px'
+    },
+    [isHorizontal]: {
+      margin: 'auto'
+    }
+  }),
   {
     ...flex.vertical,
     [isHorizontal]: {

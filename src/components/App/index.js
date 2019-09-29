@@ -139,7 +139,7 @@ function Home({ isAnimationDone, night }) {
 
         <S.Content ref={contentRef}>
           <S.WindowBox ref={messagesWindowRef} initialPose="hidden" pose={homePose} {...windowCenter}>
-            <img src={dnsPlaceholder} alt="Placeholder Gif" /> 
+            <S.HeroImg src={dnsPlaceholder} alt="Placeholder Gif" /> 
           </S.WindowBox>
 
           <A.Space huge />
