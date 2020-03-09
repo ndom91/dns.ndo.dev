@@ -139,7 +139,7 @@ function Home({ isAnimationDone, night }) {
 
         <S.Content ref={contentRef}>
           <S.WindowBox ref={messagesWindowRef} initialPose="hidden" pose={homePose} {...windowCenter}>
-            <img src={dnsPlaceholder} alt="Placeholder Gif" /> 
+            <S.HeroImg src={dnsPlaceholder} alt="Placeholder Gif" /> 
           </S.WindowBox>
 
           <A.Space huge />
@@ -150,7 +150,7 @@ function Home({ isAnimationDone, night }) {
             <A.Space huge />
             <S.Subtitle>
               <span>
-                Focused on <A.Hover {...isHoveringMessages.bind}>privacy</A.Hover> and <A.Hover>performance</A.Hover> </span>
+                Focused on <A.Hover onClick={() => window.open("https://dns.ndo.dev/privacy.html")}>privacy</A.Hover> and <A.Hover onClick={() => window.open('https://ndo.dev/blog/another-doh-server/#h-benchmarks')}>performance</A.Hover> </span>
               <br />
               {/* <span>The timeline can wait.</span> */}
             </S.Subtitle>

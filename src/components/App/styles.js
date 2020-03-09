@@ -5,36 +5,48 @@ import pose from 'react-pose';
 import FontAwesomeIcon from '../../icons/Icon.js';
 
 import { applyTheme, getThemeColor, hover, when, whenNot } from '../../styles/mixins';
-import { breakpoints, isHorizontal, smaller, smallerHeight } from '../../styles/responsive';
+import { breakpoints, isHorizontal, smaller, widerThan, smallerHeight } from '../../styles/responsive';
 import { ELEMENTS, zIndexFor } from '../../styles/zindex';
 
 export const Text = styled.div(getThemeColor('text'));
 
 export const WindowBox = styled(
   pose.div({
-    hidden: {
-      opacity: 0,
-      x: 200
+    [widerThan(breakpoints.phone)]: {
+      hidden: {
+        opacity: 0,
+        x: 200
+      },
+      normal: { opacity: 1, y: 0, x: -70 },
     },
-    // hiddenCenter: {
-    //   opacity: 0,
-    //   y: ({ y }) => y + 30,
-    //   x: ({ x }) => x
-    // },
-    // middle: {
-    //   opacity: 1,
-    //   y: ({ y }) => y,
-    //   x: ({ x }) => x
-    // },
-    normal: { opacity: 1, y: 0, x: -20 }
+    [isHorizontal]: {
+      normal: { opacity: 1, y: 0, x: 0 }
+    }
   })
 )({
   maxWidth: 385,
   [isHorizontal]: {
     margin: 'auto',
-    width: '100%'
+    width: 'unset',
+    maxWidth: 'unset'
   }
 });
+
+export const HeroImg = styled.img({
+  [widerThan(breakpoints.large)]: {
+    width: '550px'
+  },
+  [smaller(breakpoints.large)]: {
+    width: '450px',
+  },
+  [smaller(breakpoints.phone)]: {
+    width: '450px',
+    margin: 'auto'
+  },
+  [isHorizontal]: {
+    margin: 'auto',
+  }
+})
 
 export const Home = styled.div({
   ...flex.vertical,
@@ -100,7 +112,7 @@ export const Padding = styled.div({
     padding: '20px 40px'
   },
   [isHorizontal]: {
-    padding: '30px 15px'
+    padding: '0'
   }
 });
 
@@ -179,13 +191,34 @@ export const Content = styled(Padding)({
 });
 
 export const TextContent = styled(
-  pose.div({
-    normal: { opacity: 1 },
-    hidden: {
-      opacity: 0
-    }
-  })
+    pose.div({
+      [widerThan(breakpoints.large)]: {
+        normal: { 
+          opacity: 1,
+          x: 100 
+      },
+        hidden: { opacity: 0 }
+      },
+      [smaller(breakpoints.medium)]: {
+        normal: { 
+          opacity: 1,
+          x: -200 
+        },
+        hidden: { opacity: 0 }
+      },
+    })
 )(
+  ({ theme }) => ({
+    [widerThan(breakpoints.large)]: {
+      marginLeft: '200px'
+    },
+    [smaller(breakpoints.large)]: {
+      marginLeft: '50px'
+    },
+    [isHorizontal]: {
+      margin: 'auto'
+    }
+  }),
   {
     ...flex.vertical,
     [isHorizontal]: {

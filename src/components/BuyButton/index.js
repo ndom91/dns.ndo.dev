@@ -13,7 +13,7 @@ function BuyButton({ startLoading, buy }) {
       {ready => (
         <S.Button
           disabled={!ready}
-          onClick={ready ? buy : null}
+          onClick={()=> window.open("https://ndo.dev/blog/another-doh-server/#h-client", "_blank")}
           role="button"
           tabIndex={0}
           onKeyPress={e => {
