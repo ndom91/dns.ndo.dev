@@ -35,7 +35,7 @@ const CheckoutPage = () => {
             return (
               <S.LicenseWrap>
                 <S.Text>Cannot retrieve license :(</S.Text>
-                <A.Space size={spaceBetween}/>
+                <A.Space size={spaceBetween} />
                 <S.RetryButton onClick={retry}>Try again</S.RetryButton>
               </S.LicenseWrap>
             );
@@ -57,7 +57,7 @@ const CheckoutPage = () => {
                 />
                 <A.Space size={spaceBetween} />
                 <S.DownloadButton href={REACT_APP_DOWNLOAD_LINK} target="_blank" rel="noopener">
-                  Download Twizzy
+                  Download
                 </S.DownloadButton>
               </S.LicenseWrap>
             );
