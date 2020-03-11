@@ -4,7 +4,7 @@ Landing page for [`dns.ndo.dev`](https://dns.ndo.dev) - my private adblocking DN
 
 #### This is for personal use only 👨❗
 
-> `curl` maintains a list of publicly available DoH servers here: [github.com/curl](https://github.com/curl/curl/wiki/DNS-over-HTTPS)
+> `curl` maintains a list of publicly available DoH servers here: [github.com/curl/curl/wiki/DNS-over-HTTPS](https://github.com/curl/curl/wiki/DNS-over-HTTPS)
 
 ![Screenshot](screenshot.png)
 
@@ -46,10 +46,10 @@ To use DNS over HTTPS on an OS level, you will have to install a client, such as
   url = "https://dns.ndo.dev/dns-query"
   weight = 50
 ```
-Then point your DNS Settings in your OS to one of the IP / Port combinations on which this client is listening. Found at the top of the aforementioned config file and by default: `127.0.0.1:53` and `127.0.0.1:5380`
+Then change your DNS Settings in your OS to one of the IP / Port combinations on which this client is listening. They are found at the top of the aforementioned config file and are by default: `127.0.0.1:53` and `127.0.0.1:5380`
 
 
 
 ---
 
-#### 🙋‍♂️ Forked from [kitze/twizzy-landing](https://github.com/kitze/twizzy-landing)  
+#### 🙋‍♂️  Website Forked from [kitze/twizzy-landing](https://github.com/kitze/twizzy-landing)  
